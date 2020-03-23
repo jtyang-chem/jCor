@@ -1,4 +1,6 @@
 ! make 2 MeCNs at any angle and position you want
+! I missed some code for consice, 
+! and it's just an example shows how to deal with more atoms, in other words, modecules, coordinates at one time.
 program main
     use jcor
     use vCommon
@@ -9,6 +11,8 @@ program main
     integer,parameter :: NOutCor=NAn*AtomAn
     type(atom):: p0(AtomAn),p1(AtomAn),p2(AtomAn),p3(AtomAn),triP(NOutCor)
     type(atom):: a1,a2,a3
+    
+    
     call readin()
     totcor= setOriginAtom(totcor,totcor(6))
     totcor= rotateVA(totcor,vx,90.d0)
@@ -30,3 +34,20 @@ program main
     call saveCorXyz(triP,fout)
 end program main
 
+subroutine readin(fcor)
+    use vCommon, only: totcor
+    use jcor, only: rl_xyz
+    implicit none
+    character*200 :: fcor,line
+    integer :: NAtom,i
+    ! fcor="../anPm7.xyz"
+    open(file=fcor,unit=35)
+    read(35,*) NAtom
+    read(35,*)
+    allocate(totcor(NAtom))
+    do i=1,NAtom
+        read(35,'(a)')line
+        call rl_xyz(totcor(i),line)
+    enddo
+    close(35)
+end subroutine readin
