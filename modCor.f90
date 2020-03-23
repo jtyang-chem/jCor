@@ -90,7 +90,9 @@ contains
 
     ! trans and set z=0
     a2p%v=a2%v-a1%v
-    if (dabs(a2p%v(1)*a2p%v(2)).lt.0.00001d0)  then
+    
+    ! if a1p,a2p are very close, it's danger or impossible to get phi
+    if ((a2p%v(1)*a2p%v(1)+a2p%v(2)*a2p%v(2)).lt.0.00001d0)  then
         print *, "getPhi warning: Close Atoms!"
     endif
 
