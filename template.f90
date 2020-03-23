@@ -1,5 +1,4 @@
-! make 2an at any angle you want
-! test orientation of rotLight
+! test of getPhi
 
 program main
     use jcor
