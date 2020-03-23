@@ -1,4 +1,6 @@
-! atom tools
+! edit by Jitai-Yang 2020/3/23
+! trying to operate coordinates "by atom",
+! in which I thought is a natural and gentle way.
 module jcor
     implicit none
     public
