@@ -1,4 +1,4 @@
-SRC = $(wildcard modCor.f90 modCommon.f90 jsub.f90 test.f90 )
+SRC = $(wildcard modCor.f90 template.f90 )
 
 all : 
 	gfortran -O3 $(SRC) -o jsp #-Werror 
