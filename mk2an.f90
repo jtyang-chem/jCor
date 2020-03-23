@@ -1,4 +1,4 @@
-! make 2an at any angle you want
+! make 2 MeCNs at any angle and position you want
 program main
     use jcor
     use vCommon
