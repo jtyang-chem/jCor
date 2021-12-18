@@ -3,7 +3,6 @@
 ! and it's just an example shows how to deal with more atoms, in other words, modecules, coordinates at one time.
 program main
     use jcor
-    use vCommon
     implicit none
     real*8,parameter::  vx(3)=(/1.d0,0.d0,0.d0/), vy(3)=(/0.d0,1.d0,0.d0/), vz(3)=(/0.d0,0.d0,1.d0/)
     character*200::fout
