@@ -11,8 +11,9 @@ program main
     character*20 :: r2c
     type(atom):: aAtom,oAtom,p1,p2,p3,p4
 
-    oAtom%v=(/0.d0,0.d0,0.d0/)
-    p1%v=(/lb,la,1.d0/)
+    oAtom%v=(/0.d0,0.d0,0.d0/) ! init atom at origin
+    ! init 4 atoms for test
+    p1%v=(/lb,la,1.d0/) 
     p2%v=(/-lb,la,2.d0/)
     p3%v=(/-lb,-la,3.d0/)
     p4%v=(/lb,-la,4.d0/)
